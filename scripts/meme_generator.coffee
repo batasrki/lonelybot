@@ -40,6 +40,10 @@ module.exports = (robot) ->
     memeGenerator msg, 121, 1031, msg.match[1], msg.match[2], (url) ->
       msg.send url
 
+  robot.hear /(.*)(SUCCESS|NAILED IT.*)/i, (msg) ->
+    memeGenerator msg, 121, 1031, msg.match[1], msg.match[2], (url) ->
+      msg.send url
+
   robot.respond /(.*) (ALL the .*)/, (msg) ->
     memeGenerator msg, 6013, 1121885, msg.match[1], msg.match[2], (url) ->
       msg.send url
