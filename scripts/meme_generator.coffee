@@ -16,6 +16,12 @@
 # Good news everyone! <news> - Generates Professor Farnsworth
 
 module.exports = (robot) ->
+  robot.hear /Y U NO (.+)/i, (msg) ->
+    caption = msg.match[1] || ""
+
+    memeGenerator msg, 2, 166088, "Y U NO", caption, (url) ->
+      msg.send url
+
   robot.respond /Y U NO (.+)/i, (msg) ->
     caption = msg.match[1] || ""
 
