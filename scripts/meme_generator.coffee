@@ -26,7 +26,7 @@ module.exports = (robot) ->
     memeGenerator msg, 74, 2485, msg.match[1], msg.match[2], (url) ->
       msg.send url
 
-  robot.hear /(.*)((O|YA)\s?RLY\??.*)/i, (msg) ->
+  robot.hear /(^|\s+)((O|YA)\s?RLY\??.*)/i, (msg) ->
     memeGenerator msg, 920, 117049, msg.match[1], msg.match[2], (url) ->
       msg.send url
 
